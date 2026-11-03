@@ -1,54 +1,45 @@
 # X post drafts — NearGuard (NEAR Hackathon)
 
-For Marwan to post himself. Attach `demo-video.mp4` to the post/thread
-opener. Replace `[REPO_URL]` with the public repo link once it exists.
-Claims are honest: local/testnet demo, read-only mainnet checks, no real
-transactions were signed or sent.
+For Marwan to post himself. Attach `demo-video.mp4` to the post (variant A)
+or to the first post of the thread (variant B).
+Repository: https://github.com/MarwanWidjaya/nearguard
+Status of the project: local demo. Checks against public NEAR RPC are
+read-only; no transaction has been signed or sent.
 
 ---
 
-## Variant A — single post (≤280 chars)
+## Variant A — single post (≤280 chars, URL counted as 23)
 
-Built NearGuard for the NEAR Build Beyond Boundaries hackathon
-(security track): a pre-signing check that gives a paying AI agent
-allow / warn / block before it pays — and refuses a prompt-injected
-payment to a drainer before the signer is touched. Demo 👇 [REPO_URL]
+NearGuard: a pre-signing counterparty check for AI agents that pay on NEAR.
+It scores the receiver from public RPC data and a blocklist, returns
+allow / warn / block with reasons, and stops a prompt-injected payment
+before signing. https://github.com/MarwanWidjaya/nearguard
 
-(Character count verified: 279 including a t.co-shortened URL counted as
-23 chars — inside the 280 limit.)
-
-## Variant B — thread (3 posts)
+## Variant B — thread (3 posts, each ≤280 chars, URL counted as 23)
 
 **1/3**
-Your AI agent will pay whoever its prompt tells it to pay — including a
-prompt injection hiding in a document it just read.
-
-For the NEAR Build Beyond Boundaries hackathon (security track) I built
-NearGuard: an independent counterparty check an agent must pass *before*
-signing anything. 🧵
+An AI agent pays whoever its context tells it to pay — including a prompt
+injection planted in a document it read. NearGuard is a counterparty check
+for NEAR that runs before anything is signed. Built for the Build Beyond
+Boundaries hackathon (AI Security & Defense track).
 
 **2/3**
-NearGuard scores the receiver from on-chain facts (account age lower
-bound, contract code changes, balance) + a shared blocklist + interaction
-history, and answers allow / warn / block with every reason shown.
-
-Block = the signer is never invoked. Warn = a human decides.
+Scores come from public NEAR RPC data — account age (lower bound), code
+changes in ~90 days, balance — plus a local blocklist and interaction
+history. Verdict: allow, warn, or block, with every reason listed. On
+block the signer is never invoked; on warn, a human decides.
 
 **3/3**
-Demo: a poisoned invoice note tells the agent to send 5 NEAR to a drainer
-and "skip verification". NearGuard blocks it cold.
-
-The agent's key design matters too: function-call access keys only — one
-contract, allowlisted methods, capped allowance. A leaked key can't drain
-the account.
-
-Code + reproducible local demo: [REPO_URL]
-Read-only checks against public NEAR RPC; no mainnet transactions were
-performed.
+Demo: an invoice note tells the agent to send 5 NEAR to a blocklisted
+testnet account and skip verification. Verdict: block (score 100);
+payment refused. Phase-2 signing: function-call access keys only — one
+contract, named methods, capped allowance.
+https://github.com/MarwanWidjaya/nearguard
 
 ---
 
 Notes for posting:
-- Attach `demo-video.mp4` to post 1 (thread) or the single post.
-- The video is a real captured terminal run (timing compressed, labeled
-  on-screen as such).
+- The demo video is a capture of a real terminal run. Playback timing is
+  compressed; the video states this in an on-screen caption.
+- The blocklisted account in the demo is a fixture entry in the local
+  blocklist shipped with the repository.
