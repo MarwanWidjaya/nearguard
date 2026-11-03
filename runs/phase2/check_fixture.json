@@ -1,0 +1,21 @@
+{
+  "verdict": "block",
+  "score": 100,
+  "reasons": [
+    "BLOCKLISTED: Demo fixture: reported drainer that social-engineers agents into redirecting payments to it (evidence: Phase-1 demo fixture entry (local). In production use this field carries the report evidence: transaction links, the poisoned document, or a signed report., reported by demo-reporter.testnet)"
+  ],
+  "signals": {
+    "network": "testnet",
+    "receiver": "drain-vault.testnet",
+    "blocklisted": true,
+    "blocklist_entry": {
+      "evidence": "Phase-1 demo fixture entry (local). In production use this field carries the report evidence: transaction links, the poisoned document, or a signed report.",
+      "reason": "Demo fixture: reported drainer that social-engineers agents into redirecting payments to it",
+      "reported_at": "2026-11-03T00:00:00Z",
+      "reported_by": "demo-reporter.testnet"
+    },
+    "prior_interactions": 0,
+    "first_interaction": true,
+    "exists": false
+  }
+}

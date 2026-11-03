@@ -1,0 +1,21 @@
+{
+  "verdict": "allow",
+  "score": 10,
+  "reasons": [
+    "receiver is a contract account (+10)"
+  ],
+  "signals": {
+    "network": "mainnet",
+    "receiver": "wrap.near",
+    "blocklisted": false,
+    "blocklist_entry": null,
+    "prior_interactions": 3,
+    "first_interaction": false,
+    "exists": true,
+    "balance_near": 34928253.687399924,
+    "storage_usage_bytes": 168015124,
+    "is_contract": true,
+    "code_changed_recently": false,
+    "age_lower_bound_days": null
+  }
+}

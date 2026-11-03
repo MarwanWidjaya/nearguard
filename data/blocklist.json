@@ -1,0 +1,1 @@
+{"drain-vault.testnet":{"evidence":"Phase-1 demo fixture entry (local). In production use this field carries the report evidence: transaction links, the poisoned document, or a signed report.","reason":"Demo fixture: reported drainer that social-engineers agents into redirecting payments to it","reported_at":"2026-11-03T00:00:00Z","reported_by":"demo-reporter.testnet"}}
